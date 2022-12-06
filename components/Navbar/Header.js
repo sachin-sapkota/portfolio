@@ -1,6 +1,8 @@
 import { useTheme } from 'next-themes';
-
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { HiOutlineSun, HiSun } from 'react-icons/hi';
+import { MdOutlineDarkMode } from 'react-icons/md';
 
 const Header = () => {
   const { systemTheme, theme, setTheme } = useTheme();
@@ -22,7 +24,7 @@ const Header = () => {
           role="button"
           onClick={() => setTheme('light')}
         >
-          change
+          <HiSun className="w-10 h-10" />
         </div>
       );
     } else {
@@ -32,7 +34,7 @@ const Header = () => {
           role="button"
           onClick={() => setTheme('dark')}
         >
-          change
+          <MdOutlineDarkMode className="w-10 h-10" />
         </div>
       );
     }
@@ -42,7 +44,13 @@ const Header = () => {
     <header className="h-15  dark:border-gray-700">
       <div className=" md:px-[150px] sm:px-[100px] px-[50px] py-4 flex justify-between items-center">
         {/* Logo */}
-
+        <Image
+          src={'/images/logo.png'}
+          width={60}
+          height={60}
+          object-contain="true"
+          alt="logo"
+        />
         {renderThemeChanger()}
       </div>
     </header>
