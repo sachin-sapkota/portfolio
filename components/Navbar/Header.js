@@ -1,5 +1,5 @@
 import { useTheme } from 'next-themes';
-import { SunIcon, MoonIcon } from '@heroicons/react/solid';
+
 import { useState, useEffect } from 'react';
 
 const Header = () => {
@@ -40,7 +40,7 @@ const Header = () => {
 
   return (
     <header className="h-15  dark:border-gray-700">
-      <div className="container   sm:px-6 py-4 flex justify-between items-center">
+      <div className=" md:px-[150px] sm:px-[100px] px-[50px] py-4 flex justify-between items-center">
         {/* Logo */}
 
         {renderThemeChanger()}
