@@ -78,25 +78,26 @@ const Header = () => {
         ref={navbar}
         className=" h-15 fixed top-0 z-[100] inset-x-0 bg-gray-50 dark:bg-black"
       >
-        <div className=" md:px-[150px] sm:px-[100px] px-[50px] py-4 flex justify-between items-center">
+        <div className=" md:px-[120px] sm:px-[60px] px-[30px] py-4 flex justify-between items-center">
           {/* Logo */}
           <Link href="/">
             <Image
               src={'/images/logo.png'}
-              width={60}
-              height={60}
+              width={50}
+              height={50}
               object-contain="true"
               alt="logo"
             />
           </Link>
+
           <div className="flex gap-6 items-center font-semibold text-lg ">
             {renderThemeChanger()}
+
             <Link href="/">
               <span className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white">
                 Home
               </span>
             </Link>
-
             <Link href="aboutme">
               <span className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white">
                 About me
@@ -108,7 +109,7 @@ const Header = () => {
               </span>
             </Link>
             <Link href="/contacts">
-              <span className="bg-indigo-500 rounded-full py-2 px-5 text-white ">
+              <span className="bg-indigo-500 rounded-lg py-2 px-5 text-white ">
                 Contacts
               </span>
             </Link>

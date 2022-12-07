@@ -20,7 +20,7 @@ export default function Document() {
           crossOrigin="true"
         />
       </Head>
-      <body>
+      <body className="px-[100px]">
         <Main />
         <NextScript />
       </body>
