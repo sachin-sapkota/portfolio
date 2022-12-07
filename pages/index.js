@@ -1,4 +1,4 @@
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import Image from 'next/image';
 import Herosection from '../components/homepage/herosection';
 export default function Home() {
