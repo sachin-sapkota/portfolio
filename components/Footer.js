@@ -5,7 +5,7 @@ const Footer = () => {
         <span className="dark:text-gray-100 text-gray-900 font-bold text-lg mr-2">
           Sachin Sapkota
         </span>
-        &copy; {new Date().getFullYear()} All Rights Reserved
+        &copy; {new Date().getFullYear()} All Rights Reservedd
       </div>
     </footer>
   );
