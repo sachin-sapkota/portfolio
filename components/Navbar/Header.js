@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 
 const Header = () => {
   const [isActive, setIsActive] = useState(true);
+  const [isOpen, setOpen] = useState(false);
 
   const { systemTheme, theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -39,6 +40,10 @@ const Header = () => {
       navbar.current.classList.add('bg-gray-50');
     }
   }, [visible]);
+
+  const toggleNavbar = () => {
+    setOpen(!isOpen);
+  };
 
   useEffect(() => {
     setMounted(true);
@@ -76,9 +81,9 @@ const Header = () => {
     <>
       <header
         ref={navbar}
-        className=" h-15 fixed top-0 z-[100] inset-x-0 bg-gray-50 dark:bg-black"
+        className=" h-15 2xl:px-[150px] xl:px-[120px] lg:px-[80px] md:px-[60px] sm:px-[40px] px-[20px] py-4 fixed top-0 z-[100] inset-x-0 bg-gray-50 dark:bg-black flex flex-auto "
       >
-        <div className=" md:px-[120px] sm:px-[60px] px-[30px] py-4 flex justify-between items-center">
+        <div className="  flex justify-between items-center w-full">
           {/* Logo */}
           <Link href="/">
             <Image
@@ -90,7 +95,7 @@ const Header = () => {
             />
           </Link>
 
-          <div className="flex gap-6 items-center font-semibold text-lg ">
+          <div className="md:flex hidden  gap-6 items-center font-semibold text-lg ">
             {renderThemeChanger()}
 
             <Link href="/">
@@ -109,11 +114,41 @@ const Header = () => {
               </span>
             </Link>
             <Link href="/contacts">
-              <span className="bg-indigo-500 rounded-lg py-2 px-5 text-white ">
+              <span className=" bg-gradient-to-bl from-[#9E00FF] to-[#FF00A8]  rounded-lg py-2 px-5 text-white ">
                 Contacts
               </span>
             </Link>
           </div>
+        </div>
+
+        {/* 
+          mobile navbar */}
+
+        <div
+          className="md:hidden group cursor-pointer origin-right md:scale-100 h-8 w-9 md:w-10 my-auto ml-auto relative  flex items-center   "
+          onClick={toggleNavbar}
+        >
+          <div
+            className={`transition m-auto origin-center h-[5px] w-full  bg-[#9E00FF] rounded-xl absolute ${
+              isOpen
+                ? 'rotate-45 left-0 top-0 bottom-0 right-0 '
+                : 'left-0 top-0 '
+            }`}
+          ></div>
+          <div
+            className={`transition m-auto origin-center h-[5px]   rounded-xl bg-[#9E00FF] absolute ${
+              isOpen
+                ? '-rotate-45 w-full left-0 top-0 bottom-0 right-0'
+                : 'right-0 top-3 w-2/3 group-hover:w-full transition-all duration-200 ease-linear'
+            }`}
+          ></div>
+          <div
+            className={`transition m-auto origin-center h-[5px]   rounded-xl bg-[#9E00FF] absolute ${
+              isOpen
+                ? '-rotate-45 w-full left-0 top-0 bottom-0 right-0'
+                : 'left-0 top-6 w-full'
+            }`}
+          ></div>
         </div>
       </header>
     </>
