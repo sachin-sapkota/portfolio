@@ -89,14 +89,15 @@ const Header = () => {
               alt="logo"
             />
           </Link>
+
           <div className="flex gap-6 items-center font-semibold text-lg ">
             {renderThemeChanger()}
+
             <Link href="/">
               <span className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white">
                 Home
               </span>
             </Link>
-
             <Link href="aboutme">
               <span className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white">
                 About me
