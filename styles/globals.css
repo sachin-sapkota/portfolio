@@ -37,9 +37,14 @@ a {
 }
 
 @layer base {
+  @font-face{
+    font-family: walshiem;
+    src: url('../public/fonts/GT-Walsheim-Bold.ttf');
+  }
   body {
     @apply bg-gray-50 text-gray-900 dark:bg-black dark:text-gray-100;
     @apply min-h-screen;
+    font-family: walshiem;
   }
 
   ::selection {

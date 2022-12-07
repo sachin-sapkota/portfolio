@@ -17,7 +17,7 @@ const Herosection = () => {
 
   return (
     <div className="overflow-hidden relative w- ">
-      <div className="headline text-center font-extrabold text-6xl leading-[60px] font-Poppins absolute z-[20] w-full top-[20%] ">
+      <div className=" font-headline headline text-center font-extrabold text-6xl leading-[60px]  absolute z-[20] w-full top-[20%] ">
         turning ideas into the real life
         <span className="text-blue-500">projects</span> is my calling.
       </div>
